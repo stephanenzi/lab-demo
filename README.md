@@ -7,8 +7,10 @@ A pod is a collection of containers with other resources
 alias k=kubectl
 
 #K - BASIC COMMANDS:
-- kubectl get pods 
-    will list all your pods in a specific node
+- kubectl get pods
+    will list all your pods in a specific node with minimal details
+- k get pods -o wide
+    will list all pods with a little more detail info like ip addresses
 - k edit pod <pod-name>
     this will display the pod information in a yaml format
 - k describe pod <pod-name>
@@ -19,6 +21,9 @@ alias k=kubectl
     this will create your pod or resources if it does not exist but if it does then it will error out.
 - k apply -f <file-name>
     this will create your pod or resources or if it does exist it will still run and make any changes you want to make.
-
+- k delete pod <pod-name> 
+    will delete a specific pod
+- k exec <file-name> -it /bin/bash
+    this will take you into the bash of the container specified for you to run normal linux commands on that container
 
 
