@@ -4,7 +4,7 @@ Control plane component are listed below
     API SERVER: this is first entry point of the k8 cluster from user
     SCHEDULAR: this will schedule work or request by user and it gets instructions from api server
     CONTROLLER MANAGER: makes sure all other controllers are working or in a state that they are supposed to be, example make sure all the worker nodes are in good condition
-    ETCD: 
+    ETCD: is some kind of database that stores information about the K8 cluster. It authenticate, validate and updates and send response to api-server. 
 
 
 Kubernetes everyday basic commands
