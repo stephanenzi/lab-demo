@@ -1,9 +1,10 @@
 K8 - Architecture parts explain
 !
-API SERVER: this is first entry point of the k8 cluster from user
-SCHEDULAR: this will schedule work or request by user and it gets instructions from api server
-CONTROLLER MANAGER: makes sure all other controllers are working or in a state that they are supposed to be, example make sure all the worker nodes are in good condition
-ETCD: 
+Control plane component are listed below
+    API SERVER: this is first entry point of the k8 cluster from user
+    SCHEDULAR: this will schedule work or request by user and it gets instructions from api server
+    CONTROLLER MANAGER: makes sure all other controllers are working or in a state that they are supposed to be, example make sure all the worker nodes are in good condition
+    ETCD: 
 
 
 Kubernetes everyday basic commands
