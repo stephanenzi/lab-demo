@@ -1,0 +1,16 @@
+# Day 7 task 3 work is to fix a yaml code
+#
+# This is the first error I  found during the tshoot {Warning  Failed     14s (x3 over 54s)  kubelet            Failed to pull image "[rediss]": failed to pull and unpack image "docker.io/library/rediss:latest": failed to resolve reference "docker.io/library/rediss:latest": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed} = the image is wrong.
+#
+
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: test
+  name: redis
+spec:
+  containers:
+  - image: redis
+    name: redis
+
