@@ -5,7 +5,7 @@ Control plane component are listed below
     SCHEDULAR: this will schedule work or request by user and it gets instructions from api server
     CONTROLLER MANAGER: makes sure all other controllers are working or in a state that they are supposed to be, example make sure all the worker nodes are in good condition
     ETCD: is some kind of database that stores information about the K8 cluster. It authenticate, validate and updates and send response to api-server. 
-
+    REPLICATION CONTROLLER: this ensures that a specific number of identical Pod replicas are running at all times
 
 Kubernetes everyday basic commands
 
@@ -34,5 +34,8 @@ alias k=kubectl
     will delete a specific pod
 - k exec <file-name> -it /bin/bash
     this will take you into the bash of the container specified for you to run normal linux commands on that container
-
+- k edit rs/nginx-rs
+    this command is used to make a live editing of a replica set manifest
+- k scale --replicas=6 rs/nginx-rs
+    this will also scale the replica set [nginx-rs] to the number specified (6)
 
