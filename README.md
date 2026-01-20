@@ -38,4 +38,5 @@ alias k=kubectl
     this command is used to make a live editing of a replica set manifest
 - k scale --replicas=6 rs/nginx-rs
     this will also scale the replica set [nginx-rs] to the number specified (6)
-
+- k create deployment <name of deployment> --image=httpd --replicas=5
+    this command creates 5 replicas of httpd pods

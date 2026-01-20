@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: deploy-pod
+  name: deploy-pod
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: deploy-pod
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: deploy-pod
+    spec:
+      containers:
+      - image: httpd
+        name: httpd
+        resources: {}
+status: {}
