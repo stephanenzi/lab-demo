@@ -1,3 +1,7 @@
+K8 - Architecture diagram
+!
+https://github.com/stephanenzi/lab-demo/blob/main/k8-architecture.png
+
 K8 - Architecture parts explain
 !
 Control plane component are listed below
