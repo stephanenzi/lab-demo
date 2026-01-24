@@ -1,36 +1,34 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-
 const app = express();
 const port = 3000;
 const users = [];
 
 // Middleware to parse JSON bodies
-app.use(bodyParser.json());
+app.use(express.json());  // Replaced body-parser with built-in middleware
 
 // Sample route
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send('Hello World! - My first Express App');
 });
 
-// Get registered user
-app.get('/user', (req, res) => {
+// Get registered users
+app.get('/users', (req, res) => {
     return res.json({ users });
-})
+});
 
 // Register a new user
 app.post('/users', (req, res) => {
-    const newUserId = req.body.userId;
-    if (!newUserId) {
-        return res.status(400).send('Missing userId in request body ');
+    const { userId } = req.body;
+    if (!userId || typeof userId !== 'string' || userId.trim() === '') {
+        return res.status(400).json({ error: 'Missing or invalid userId in request body' });
     }
 
-    if (users.includes(newUserId)) {
-        return res.status(409).send('User already exists');
+    if (users.includes(userId)) {
+        return res.status(400).json({ error: 'User already exists' });
     }
 
-    users.push(newUserId);
-    return res.status(201).send(`User ${newUserId} registered successfully`);
+    users.push(userId);
+    return res.status(201).json({ message: `User ${userId} registered successfully` });
 });
 
 // Start the server
