@@ -1,0 +1,3 @@
+FROM alpine:latest
+
+ENTRYPOINT [ "echo", "This is a ENTRYPOINT instruction in a Dockerfile." ]
