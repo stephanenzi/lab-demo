@@ -1,0 +1,19 @@
+# kubectl expose pod nginx --type=NodePort --name=nginx-service --port=80 --target-port=80
+# kubectl apply -f KUBERNETES/OBJECT-MGMT/nginx-svc.yaml
+# kubectl get svc nginx-service
+# kubectl describe svc nginx-service
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  labels:
+    app: nginx
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx
