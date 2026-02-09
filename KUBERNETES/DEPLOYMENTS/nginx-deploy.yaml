@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deploy
+  labels:
+    app: app-cache
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: app-cache
+  template:
+    metadata:
+      labels:
+        app: app-cache
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.27.0
+        ports:
+        - containerPort: 80
